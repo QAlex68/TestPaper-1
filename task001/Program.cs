@@ -20,20 +20,18 @@ List<string> GetShortStrings(List<string> array)
 List<string> GetDynamicArray()
 {
     List<string> dArray = new List<string>();
-    Console.WriteLine("Введите строковые переменные любой длины (окончание ввода пустая строка):");    
+    Console.WriteLine("Введите строковые переменные любой длины (окончание ввода пустая строка):");
     while(true)
     {
         Console.Write("Следующая переменная: ");
         string? input = Console.ReadLine();
-        //if (!string.IsNullOrWhiteSpace(input)) dArray.Add(input);
         if (input!.Length != 0) dArray.Add(input);
-        else break;              
-    }       
+        else break;
+    }
     return dArray;
 }
 
 List<string> myArray = GetDynamicArray();
 Console.WriteLine($"Сгенерирован массив - [{String.Join(", ", myArray)}]");
 List<string> shortArray = GetShortStrings(myArray);
-Console.WriteLine($"Массив строк длиной более 3 элементов - [{String.Join(", ", shortArray)}]");
-
+Console.WriteLine($"Массив строк длиной не более 3 символов - [{String.Join(", ", shortArray)}]");
