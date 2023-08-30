@@ -7,15 +7,15 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-// void PositiveNumber(List<int> array)
-// {  
-//     int count = 0;
-//     for (int i = 0; i < array.Count; i++)
-//     {
-//         if (array[i] > 0) count++;          
-//     }
-//     Console.WriteLine($"Количество чисел > 0 в массиве - {count} !!");
-// }
+void GetShortStrings(List<int> array)
+{  
+    int count = 0;
+    for (int i = 0; i < array.Count; i++)
+    {
+        if (array[i] > 0) count++;          
+    }
+    Console.WriteLine($"Количество чисел > 0 в массиве - {count} !!");
+}
 
 // void PrintArray(double[,] massive)
 // {
@@ -41,9 +41,11 @@ List<string> GetDynamicArray()
         if (input!.Length != 0) dArray.Add(input);
         else break;              
     }       
-    Console.WriteLine($"Сгенерирован массив - [{String.Join(", ", dArray)}]");
     return dArray;
 }
 
-GetDynamicArray();
-//PositiveNumber(GetDynamicArray());
+myArray = GetDynamicArray();
+Console.WriteLine($"Сгенерирован массив - [{String.Join(", ", myArray)}]");
+shortArray = GetShortStrings(myArray);
+Console.WriteLine($"Массив строк длиной более 3 элементов - [{String.Join(", ", shortArray)}]");
+
