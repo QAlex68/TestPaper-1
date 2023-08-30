@@ -7,27 +7,15 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-void GetShortStrings(List<int> array)
+List<string> GetShortStrings(List<string> array)
 {  
-    int count = 0;
+    List<string> newArray = new List<string>();
     for (int i = 0; i < array.Count; i++)
     {
-        if (array[i] > 0) count++;          
+        if (array[i].Length <= 3) newArray.Add(array[i]);          
     }
-    Console.WriteLine($"Количество чисел > 0 в массиве - {count} !!");
+    return newArray; 
 }
-
-// void PrintArray(double[,] massive)
-// {
-//     for (int i = 0; i < massive.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < massive.GetLength(1); j++)
-//         {
-//             Console.Write($"{Math.Round(massive[i,j],2)}\t", -5);
-//         }
-//         Console.WriteLine();
-//     }
-// }
 
 List<string> GetDynamicArray()
 {
@@ -44,8 +32,8 @@ List<string> GetDynamicArray()
     return dArray;
 }
 
-myArray = GetDynamicArray();
+List<string> myArray = GetDynamicArray();
 Console.WriteLine($"Сгенерирован массив - [{String.Join(", ", myArray)}]");
-shortArray = GetShortStrings(myArray);
+List<string> shortArray = GetShortStrings(myArray);
 Console.WriteLine($"Массив строк длиной более 3 элементов - [{String.Join(", ", shortArray)}]");
 
