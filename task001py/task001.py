@@ -12,7 +12,7 @@ def get_short_strings(array):
     for i in range(len(array)):   
         if len(array[i]) <= 3:
             new_array.append(array[i])        
-    return new_array; 
+    return new_array
 
 
 def get_list_on_keyboard():
